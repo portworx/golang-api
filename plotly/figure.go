@@ -23,9 +23,16 @@ func (f *Figure) Overwrite(fid string) error {
 }
 
 type Layout struct {
-	Title  *string `json:"title,omitempty"`
-	Width  *int64  `json:"width,omitempty"`
-	Height *int64  `json:"width,omitempty"`
+	Title      *string `json:"title,omitempty"`
+	Width      *int64  `json:"width,omitempty"`
+	Height     *int64  `json:"width,omitempty"`
+	Showlegend *bool   `json:"showlegend,omitempty"`
+	Xaxis      *Xaxis  `json:"xaxis,omitempty"`
+	Yaxis      *Xaxis  `json:"yaxis,omitempty"`
+}
+
+type Xaxis struct {
+	Title *string `json:"title,omitempty"`
 }
 
 // S returns a pointer to the specified string
@@ -46,15 +53,15 @@ func F(in float64) *float64 {
 type Data []*Trace
 
 type Trace struct {
-	Type   string   `json:"type"`
-	X      Array    `json:"x,omitempty"`
-	Y      Array    `json:"y,omitempty"`
-	Z      Array    `json:"z,omitempty"`
-	R      Array    `json:"r,omitempty"`
-	T      Array    `json:"t,omitempty"`
-	Mode   *string  `json:"mode,omitempty"`
-	Name   *string  `json:"name,omitempty"`
-	Text   Array    `json:"text,omitempty"`
+	Type   string    `json:"type"`
+	X      Array     `json:"x,omitempty"`
+	Y      Array     `json:"y,omitempty"`
+	Z      Array     `json:"z,omitempty"`
+	R      Array     `json:"r,omitempty"`
+	T      Array     `json:"t,omitempty"`
+	Mode   *string   `json:"mode,omitempty"`
+	Name   *string   `json:"name,omitempty"`
+	Text   Array     `json:"text,omitempty"`
 	ErrorX *ErrorBar `json:"error_x,omitempty"`
 	ErrorY *ErrorBar `json:"error_y,omitempty"`
 	Marker *Marker   `json:"marker,omitempty"`
