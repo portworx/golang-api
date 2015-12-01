@@ -13,10 +13,8 @@ import (
 )
 
 func init() {
-	//username = os.Getenv("PLOTLY_USERNAME")
-	//apikey = os.Getenv("PLOTLY_APIKEY")
-	username = "portworx"
-	apikey = "xp5yxyrhvs"
+	username = os.Getenv("PLOTLY_USERNAME")
+	apikey = os.Getenv("PLOTLY_APIKEY")
 	authenticated = true
 	var credentialsFile *os.File
 	files := []string{
