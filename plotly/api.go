@@ -13,8 +13,10 @@ import (
 )
 
 func init() {
-	username = os.Getenv("PLOTLY_USERNAME")
-	apikey = os.Getenv("PLOTLY_APIKEY")
+	//username = os.Getenv("PLOTLY_USERNAME")
+	//apikey = os.Getenv("PLOTLY_APIKEY")
+	username = "portworx"
+	apikey = "xp5yxyrhvs"
 	authenticated = true
 	var credentialsFile *os.File
 	files := []string{
@@ -151,7 +153,6 @@ func Post(data *Request) (result *PostResponse, err error) {
 
 	fmt.Printf("HEY %#v", coded)
 	response, err := client.PostForm(POSTURL, data.urlEncode())
-
 
 	if err != nil {
 		return
