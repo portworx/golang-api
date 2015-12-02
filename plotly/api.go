@@ -125,7 +125,7 @@ func (r *Request) urlEncode() url.Values {
 	v.Set("args", string(args))
 	kwargs, _ := json.Marshal(map[string]interface{}{
 		"world_readable": true,
-		"fileopt":        "overwrite",
+		"fileopt":        "append",
 		"layout":         r.Figure.Layout,
 		"filename":       r.Filename,
 	})
